@@ -54,6 +54,24 @@
         <td>2016-02-10</td>
     </tr>
     <tr>
+        <th>CODE_CITY</th>
+        <td>시/도 정보</td>
+        <td>중앙선거관리위원회</td>
+        <td>2016-02-11</td>
+    </tr>
+    <tr>
+        <th>CODE_COUNTY</th>
+        <td>구/시/군 정보</td>
+        <td>중앙선거관리위원회</td>
+        <td>2016-02-11</td>
+    </tr>
+    <tr>
+        <th>CODE_TOWNSHIP</th>
+        <td>읍/면/동 별 선거구 정보</td>
+        <td>중앙선거관리위원회</td>
+        <td>2016-02-11</td>
+    </tr>
+    <tr>
 </tbody>
 </table>
 
@@ -170,6 +188,11 @@ member_name 필드 값을 이용해서 TB_member_report 테이블을 참조한�
         <td>19대 국회의원 이름. 동명이인 4명 TB_MEMBER_REPORT.memeber_name</td>
         <td>강관우</td>
     </tr>
+    <tr>
+        <th>member_birthday</th>
+        <td>후보자의 생일</td>
+        <td>1991-10-17</td>
+    </tr>
 </tbody>
 
 </table>
@@ -198,6 +221,11 @@ TB_POPONG_19의 memeber_name과 참조관계를 맺을 예정임. 동명이인�
         <th>member_name</th>
         <td>열려라 국회의 국회의원 이름</td>
         <td>강관우</td>
+    </tr>
+    <tr>
+        <th>member_birthday</th>
+        <td>후보자의 생일</td>
+        <td>1991-10-17</td>
     </tr>
     <tr>
         <th>attendance_rate</th>
@@ -293,4 +321,99 @@ TB_POPONG_19의 memeber_name과 참조관계를 맺을 예정임. 동명이인�
 
 --------------
 
+### CODE_CITY
+
+출처
+> http://info.nec.go.kr/electioninfo/electionInfo_report.xhtml?electionId=0020120411&requestURI=%2Felectioninfo%2F0020120411%2Fbi%2Fbigi05.jsp&topMenuId=BI&secondMenuId=BIGI&menuId=BIGI05&statementId=BIGI05&electionCode=2
+
+
+<table>
+	<thead>
+    <tr>
+        <th>Column name</th>
+        <th>Description</th>
+        <th>ex</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th>city_name</th>
+        <td>시/도 이름</td>
+        <td>서울특별시</td>
+    </tr>
+    <tr>
+        <th>city_code</th>
+        <td>시/도 코드 : 1100~4900까지 코드 - 중앙선거관리위원회 cityCode</td>
+        <td>1100</td>
+    </tr>
+</tbody>
+</table>
+
+-------------------
+
+### CODE_COUNTY
+
+<table>
+	<thead>
+    <tr>
+        <th>Column name</th>
+        <th>Description</th>
+        <th>ex</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th>city_code</th>
+        <td>시/도 코드</td>
+        <td>1100</td>
+    </tr>
+    <tr>
+        <th>county_name</th>
+        <td>구/시/군 이름</td>
+        <td>중구</td>
+    </tr>
+    <tr>
+        <th>county_code</th>
+        <td>구/시/군 코드 :city_code + 0001~9999까지 숫자 </td>
+        <td>11000001</td>
+    </tr>
+</tbody>
+</table>
+
+-------------------
+
+### CODE_TOWNSHIP
+
+<table>
+<thead>
+    <tr>
+        <th>Column name</th>
+        <th>Description</th>
+        <th>ex</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <th>district_name</th>
+        <td>선거구 명 콤마로 구분</td>
+        <td>서울특별시, 중구</td>
+    </tr>
+    <tr>
+        <th>county_code</th>
+        <td>구/시/군 코드 :city_code + 100~999까지 조합 </td>
+        <td>11000001</td>
+    </tr>
+    <tr>
+        <th>township_name</th>
+        <td>읍/면/동 이름</td>
+        <td>소공동</td>
+    </tr>
+    <tr>
+        <th>township_code</th>
+        <td>읍/면/동 코드 : city_code + county_code + 0000~9999까지 숫자 </td>
+        <td>110000010001</td>
+    </tr>
+</tbody>
+</table>
+-------------------
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.ko"><img alt="크리에이티브 커먼즈 라이선스" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
